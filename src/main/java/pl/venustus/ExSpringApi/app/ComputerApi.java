@@ -19,12 +19,14 @@ public class ComputerApi {
         computers = Arrays.asList(computer1, computer2);
     }
 
-    @PostMapping("api/computer/add")
+    @PostMapping("api/computers/add")
     public void addComputer(@RequestBody Computer computer) {
-
+        computers.add(computer);
+        Computer computer3 = new Computer("dd33", 1000, 10);
+        computers.add(computer3);
     }
 
-    @GetMapping("/api/computer/get")
+    @GetMapping("/api/computers/get")
     public List<Computer> getComputer() {
         return computers;
     }
