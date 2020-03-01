@@ -1,17 +1,28 @@
 package pl.venustus.ExSpringApi.app;
 
 public class Computer {
+
+    private long id;
     private String ddrType;
     private long mhz;
     private int memorySize;
 
-    public Computer(String ddrType, long mhz, int memorySize) {
+    public Computer() {
+    }
+
+    public Computer(long id, String ddrType, long mhz, int memorySize) {
+        this.id = id;
         this.ddrType = ddrType;
         this.mhz = mhz;
         this.memorySize = memorySize;
     }
 
-    public Computer() {
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getDdrType() {
@@ -41,7 +52,8 @@ public class Computer {
     @Override
     public String toString() {
         return "Computer{" +
-                "ddrType='" + ddrType + '\'' +
+                "id=" + id +
+                ", ddrType='" + ddrType + '\'' +
                 ", mhz=" + mhz +
                 ", memorySize=" + memorySize +
                 '}';
